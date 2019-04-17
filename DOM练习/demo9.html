@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聊天框实战</title>
+</head>
+<body>
+    <input type="text" name="info">
+    <button>提交</button>
+    <ul></ul>
+    <script type="text/javascript">
+        // 获取元素
+        let input=document.getElementsByName('info')[0];
+        let button=document.getElementsByTagName('button')[0];
+        let ul=document.getElementsByTagName('ul')[0];
+        //button点击事件onclick
+        button.onclick = function(){
+            let li = document.createElement('li');//创建一个新元素
+            li.innerHTML = input.value;//将文本框中的内容添加到新元素中
+            ul.appendChild(li);//将子元素插入到父元素尾部
+            input.value = '';//将文本框内容清空
+        }
+    
+    </script>
+</body>
+</html>

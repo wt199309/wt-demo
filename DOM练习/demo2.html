@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据标签名来获取元素</title>
+</head>
+<body>
+	<ul>
+		<li>列表项01</li>
+		<li>列表项02</li>
+		<li>列表项03</li>
+		<li>列表项04</li>
+		<li>列表项05</li>
+	</ul>
+	<script type="text/javascript">
+		//返回的是一个元素的集合，就会有一个length
+		let ul = document.getElementsByTagName('ul')[0];
+		ul.style.backgroundColor = 'lightgreen';
+		console.log(ul)
+
+		let item1 = document.getElementsByTagName('ul').item(0);
+		item1.style.backgroundColor = "lightblue";
+		let item2 = getElementsByTagName('li').item(0);
+		item2.style.backgroundColor = 'pink';
+	</script>
+</body>
+</html>

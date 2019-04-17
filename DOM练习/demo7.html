@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js对元素内容的处理</title>
+</head>
+<body>
+<p>我正在学习JavaScript编程技术</p>
+<p>我正在学习<strong style="color:red">javaScript</strong>编程技术</p>    
+<script>
+let p1 = document.getElementsByTagName('p').item(0);
+let p2 = document.getElementsByTagName('p').item(1);
+console.log(p1.innerHTML);
+console.log(p2.innerHTML);
+console.log(p1.textContent);
+console.log(p2.textContent);
+</script>
+</body>
+</html>

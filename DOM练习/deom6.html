@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js对HTML元素属性进行操作</title>
+</head>
+<body>
+    <img src="static/p1.jpg" alt="" width="320px">
+    <h3 id="header" class="hello" style="color: red" title="江湖中人" index="php会越来越好">江湖：人在江湖飘，哪能不沉浮。</h3>
+    <script>
+    let img = document.getElementsByTagName('img').item(0);
+    console.log(img.src);
+    img.src = 'static/p2.jpg';
+    img.width = '500';
+    let h3 = document.getElementById('header');
+    console.log(header);
+    console.log(h3.className);
+    h3.className = 'world';
+    console.log(h3.className);
+    if(h3.hasAttribute('index')){
+        console.log(h3.getAttribute('index'));
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟智能在线客服</title>
+    <style>
+        div:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            background-color: lightcyan;
+            margin: 30px auto;
+            color: #333;
+            box-shadow: 2px 2px 2px #808080;
+        }
+
+        h3 {
+            text-align: center;
+            margin: -10px;
+        }
+
+        div:nth-child(2) {
+            width: 550px;
+            height: 450px;
+            border: 4px double green;
+            background-color: #efefef;
+            margin: 20px auto 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            line-height: 2em;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        table {
+            width: 90%;
+            height: 80px;
+            margin: auto;
+        }
+
+        textarea {
+            width: 90%;
+            resize: none;
+            background-color: lightyellow;
+        }
+
+        button {
+            width: 60px;
+            height: 40px;
+            background-color: aquamarine;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>在线客服</h3>
+        <div>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <table>
+            <tr>
+                <td><textarea name="text" cols="50" rows="4"></textarea></td>
+                <td><button type="button">发送</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        //获取元素
+        let btn = document.getElementsByTagName('button')[0];
+        let text = document.getElementsByName('text')[0];
+        let list = document.getElementsByTagName('ul')[0];
+        let sum = 0; //计数器
+        //添加点击事件,获取用户的发言并发送到窗口
+        btn.onclick = function () {
+            //获取用户提交的内容
+            if (text.value.length === 0) {
+                alert('您好！发言不能为空。');
+                return false;
+            }
+            let userComment = text.value; //拿到文本框输入的内容（获取并保存用户的发言）
+            text.value = ''; //立即清空输入框
+            //创建一个li
+            let li = document.createElement('li');
+
+
+
+            //将用户头像与发言连接
+            let userPic = '<img src="static/images/me.jpg" style="width: 30px; border-radius: 50%;">'
+            //将用户发言和头像添加到创建的LI中
+            li.innerHTML = userPic + '' + userComment;
+            //将li添加到ul中
+            list.appendChild(li);
+            sum += 1;
+
+            //设置一个定时器2秒钟以后回复
+            setTimeout (function () {
+                //自动回复信息的模板
+                let info = [
+                    '真烦人，别耽误我玩游戏',
+                    '除了退货退款，其他的都可以问',
+                    '说的哈，完全的听不懂呀',
+                    '我会在我觉得方便的时候回复你的',
+                    '投诉我的人可多了去了呀....'
+
+                ];
+                let temp = info[Math.floor(Math.random()*4)];
+                let reply = document.createElement('li')
+                let kefuPic = '<img src="static/images/zly.jpg" style="width: 30px; border-radius: 50%;">'
+                reply.innerHTML = kefuPic + ' ' + '<span style="color: red">'+temp+'</span>';
+                list.appendChild(reply);
+                sum +=1;
+            },2000);
+            
+            //清空窗口并将计数器清零
+            if ( sum > 10) {
+                list.innerHTML = '';
+                sum = 0;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据name选择元素</title>
+</head>
+<body>
+	<form action="" name="login">
+		<input type="text" name="username">
+		<input type="password" name="password">
+		<button name="button">提交</button>
+	</form>
+	<script type="text/javascript">
+		let login = document.getElementsByName('login')[0];
+		console.log(login);
+		login.style.backgroundColor = 'green';
+		//还可以把name属性当做document属性来用；
+		let login1 = document.login;
+		console.log(login1);
+		login1.style.height = "30px";
+		
+	</script>
+</body>
+</html>
