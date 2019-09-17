@@ -1,0 +1,95 @@
+* {
+    list-style: none;
+}
+
+/* .jumbotron .navbar-nav {
+  list-style: none;
+} */
+/* 巨幕 */
+.jumbotron .h1,
+.jumbotron h1 {
+    font-size: 60px;
+}
+
+@media screen and (min-width: 992px) {
+
+    .jumbotron .h1,
+    .jumbotron h1 {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .jumbotron .h1,
+    .jumbotron h1 {
+        font-size: 90px;
+    }
+}
+
+.jumbotron {
+    padding: 100px 0;
+    color: #fff;
+    background: linear-gradient(45deg, #020031 0, #6d3353 100%);
+    margin-bottom: 0;
+}
+
+/* 媒体链接 */
+.mtlink {
+    background: #F5F5F5;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.mtlink .container ul {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mtlink .container li {
+    display: inline-block;
+
+}
+
+.mtlink a {
+    color: #555;
+
+}
+
+.mtlink .container li span {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.mtlink .weibo:before {
+    content: '|';
+    margin: 0 10px;
+    color: #ccc;
+}
+
+/* 页头 */
+.page-header {
+    text-align: center;
+    width: 60%;
+    margin: 60px auto 40px;
+}
+
+/* 主体内容 */
+.container .row .caption {
+    text-align: center;
+}
+
+.container .row .thumbnail {
+    max-width: 310px;
+    margin: 0 auto 30px;
+}
+
+/* 底部 */
+.footer .list-unstyled li a {
+    color: #777;
+}
+
+.footer {
+    border-top: 1px solid #DDDDDD;
+    padding-top: 40px;
+    margin-top: 50px;
+}
